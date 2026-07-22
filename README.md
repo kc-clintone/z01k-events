@@ -1,6 +1,6 @@
 # z01k-events
 
-z01k-events is a modern event platform built with React, Vite, TanStack Router/Start, and Supabase. The project is designed to help organizers publish events, collect registrations, and manage a simple content experience for attendees.
+z01k-events is a modern event platform built with React, Vite, TanStack Router/Start, and Supabase. The project is designed to help organizers publish events, collect registrations, and manage simple content experience for attendees.
 
 ## What this project includes
 
@@ -15,7 +15,7 @@ z01k-events is a modern event platform built with React, Vite, TanStack Router/S
 ### Prerequisites
 
 - Node.js 18 or newer
-- npm
+- npm (or bun if you prefer)
 
 ### Install and run locally
 
