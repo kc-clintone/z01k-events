@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# TanStack Start is SSR. The Nitro `netlify` preset emits a server function
+# under .netlify/functions-internal and static assets under dist. Netlify
+# auto-wires the function; do NOT add a catch-all SPA redirect to index.html
+# or dynamic routes / server functions will be served as static HTML.
+
+# Optional: Configure security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
