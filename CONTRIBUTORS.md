@@ -14,4 +14,4 @@ If you have contributed and would like to be listed, please open a pull request 
 
 Example:
 
-- rick sanchez (@rick-sanchez) — improved the event registration flow and helped with documentation
+- Rick Sanchez (@rick-sanchez) — improved the event registration flow and helped with documentation
