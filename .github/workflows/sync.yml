@@ -21,7 +21,7 @@ jobs:
           git config --global user.email "actions@github.com"
           
           # Force git to use the secret token for authentication
-          git remote add production https://x-access-token:${{ secrets.SYNC_SENSE }}@github.com/kc-clintone/z01k-events.git
+          git remote add production https://x-access-token:${{ secrets.SYNC_SENSE }}@github.com/clintoo/kisumu-tech-hub.git
           
           # Push the main branch to Account A
           git push production main --force
