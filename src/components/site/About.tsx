@@ -19,7 +19,7 @@ export function About() {
               A tech community built around <span className="text-gradient">learning, building & shipping things together</span>.
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Zone01 Kisumu is a peer-learning tech community for software engineers, designers and curious builders. We run monthly mini-conferences and hands-on meetups focused on the craft of building — not the hype.
+              Zone01 Kisumu is a peer-learning tech community for software engineers, designers and curious builders. We run monthly mini-conferences and hands-on meetups/workshops focused on the craft of building — not the hype.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               No gatekeeping. No pay-walls. Just developers helping each other get sharper.
