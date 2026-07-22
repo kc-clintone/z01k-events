@@ -1,10 +1,8 @@
 name: Sync to Production
-
 on:
   push:
     branches:
       - main
-
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -14,14 +12,27 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Verify secret is available
+        run: |
+          if [ -z "${{ secrets.SYNC_SENSE }}" ]; then
+            echo "::error::SYNC_SENSE secret is empty or not accessible to this workflow/environment."
+            exit 1
+          else
+            echo "SYNC_SENSE is set (length: ${#SECRET_VAR})"
+          fi
+        env:
+          SECRET_VAR: ${{ secrets.SYNC_SENSE }}
+
       - name: Push to Production Repository
+        env:
+          TOKEN: ${{ secrets.SYNC_SENSE }}
         run: |
           # Configure Git user profile for the commit history
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          
+
           # Force git to use the secret token for authentication
-          git remote add production https://x-access-token:${{ secrets.SYNC_SENSE }}@github.com/clintoo/kisumu-tech-hub.git
-          
+          git remote add production "https://x-access-token:${TOKEN}@github.com/clintoo/kisumu-tech-hub.git"
+
           # Push the main branch to Account A
           git push production main --force
